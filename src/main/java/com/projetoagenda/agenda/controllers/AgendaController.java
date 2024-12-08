@@ -10,6 +10,7 @@ import com.projetoagenda.agenda.dtos.AgendaResponse;
 import com.projetoagenda.agenda.services.AgendaService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -20,9 +21,13 @@ public class AgendaController {
     private AgendaService service;
 
     @GetMapping
-    public ResponseEntity<List<AgendaResponse>> getAgenda(){
+    public ResponseEntity<List<AgendaResponse>> getAgendas(){
         return ResponseEntity.ok(service.getAllAgenda());
     }
 
-
+    @GetMapping("{id}")
+    public ResponseEntity<AgendaResponse> getAgenda(@PathVariable long id){
+        return ResponseEntity.ok(service.getAgendaById(id));
+    }
+    
 }

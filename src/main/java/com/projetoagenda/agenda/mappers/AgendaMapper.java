@@ -4,7 +4,7 @@ import com.projetoagenda.agenda.dtos.AgendaRequest;
 import com.projetoagenda.agenda.dtos.AgendaResponse;
 import com.projetoagenda.agenda.entities.Agenda;
 
-public class AgendaMappers {
+public class AgendaMapper {
     
     public static AgendaResponse toDTO(Agenda agenda){
         return new AgendaResponse (agenda.getId(),

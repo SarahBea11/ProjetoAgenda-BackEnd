@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -44,5 +45,11 @@ public class AgendaController {
     public ResponseEntity<AgendaResponse> saveAgenda(@RequestBody AgendaRequest agenda){
         AgendaResponse newAgenda = service.save(agenda);
         return ResponseEntity.created(null).body(newAgenda);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateAgenda(@PathVariable long id, @RequestBody AgendaRequest agenda){
+        service.update(agenda, id);
+        return ResponseEntity.ok().build();
     }
 }

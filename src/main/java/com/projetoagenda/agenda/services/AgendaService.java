@@ -48,4 +48,14 @@ public class AgendaService {
         return AgendaMapper.toDTO(newAgenda);
     }
 
+    public void update(AgendaRequest agenda, long id){
+        Agenda aux = repository.getReferenceById(id);
+
+        aux.setNamecommitment(agenda.namecommitment());
+        aux.setLocalcommitment(agenda.localcommitment());
+        aux.setDate(agenda.date());
+
+        repository.save(aux);
+    }
+
 }

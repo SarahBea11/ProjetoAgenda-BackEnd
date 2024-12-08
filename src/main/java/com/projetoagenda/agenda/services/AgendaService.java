@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.projetoagenda.agenda.dtos.AgendaRequest;
 import com.projetoagenda.agenda.dtos.AgendaResponse;
 import com.projetoagenda.agenda.entities.Agenda;
 import com.projetoagenda.agenda.mappers.AgendaMapper;
@@ -39,5 +40,12 @@ public class AgendaService {
         else{
             throw new EntityNotFoundException("Compromisso não encontrado");
         }
+    
     }
+
+    public AgendaResponse save(AgendaRequest agenda){
+        Agenda newAgenda = repository.save(AgendaMapper.toEntity(agenda));
+        return AgendaMapper.toDTO(newAgenda);
+    }
+
 }

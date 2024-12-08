@@ -31,4 +31,13 @@ public class AgendaService {
 
         return AgendaMapper.toDTO(agenda);
     }
+
+    public void delete (long id){
+        if(repository.existsById(id)){
+            repository.deleteById(id);
+        }
+        else{
+            throw new EntityNotFoundException("Compromisso não encontrado");
+        }
+    }
 }

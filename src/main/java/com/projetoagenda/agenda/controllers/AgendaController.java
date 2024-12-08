@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projetoagenda.agenda.dtos.AgendaResponse;
 import com.projetoagenda.agenda.services.AgendaService;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -28,6 +29,12 @@ public class AgendaController {
     @GetMapping("{id}")
     public ResponseEntity<AgendaResponse> getAgenda(@PathVariable long id){
         return ResponseEntity.ok(service.getAgendaById(id));
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteAgenda(@PathVariable long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
     
 }

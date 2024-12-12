@@ -20,9 +20,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
+
 @RestController
 @RequestMapping("agenda")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class AgendaController {
     
     @Autowired 

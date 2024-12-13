@@ -8,6 +8,7 @@ public record AgendaRequest(
     String namecommitment,
     @NotBlank(message = "Local não pode ser nulo")
     String localcommitment,
+    String horacommitment,
     @NotBlank(message = "Data não pode ser nulo")
     String date
 ) {

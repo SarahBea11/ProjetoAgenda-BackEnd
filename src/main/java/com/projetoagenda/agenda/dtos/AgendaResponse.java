@@ -4,6 +4,7 @@ public record AgendaResponse(
     Long id,
     String namecommitment,
     String localcommitment,
+    String horacommitment,
     String date
 ) {
     

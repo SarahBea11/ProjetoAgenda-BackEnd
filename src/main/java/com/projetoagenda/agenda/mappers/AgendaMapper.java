@@ -10,6 +10,7 @@ public class AgendaMapper {
         return new AgendaResponse (agenda.getId(),
         agenda.getNamecommitment(),
         agenda.getLocalcommitment(),
+        agenda.gethoracommitment(),
         agenda.getDate());
     }
 
@@ -17,6 +18,7 @@ public class AgendaMapper {
         Agenda agenda = new Agenda();
         agenda.setNamecommitment(agendaRequest.namecommitment());
         agenda.setLocalcommitment(agendaRequest.localcommitment());
+        agenda.sethoracommitment(agendaRequest.horacommitment());
         agenda.setDate(agendaRequest.date());
 
         return agenda;

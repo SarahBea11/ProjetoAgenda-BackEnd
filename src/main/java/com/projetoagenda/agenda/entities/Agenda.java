@@ -14,6 +14,7 @@ public class Agenda implements Serializable {
     private Long id;
     private String namecommitment;
     private String localcommitment; 
+    private String horacommitment; 
     private String date;
 
     public Long getId() {
@@ -33,6 +34,12 @@ public class Agenda implements Serializable {
     }
     public void setLocalcommitment(String localcommitment) {
         this.localcommitment = localcommitment;
+    }
+    public String gethoracommitment() {
+        return horacommitment;
+    }
+    public void sethoracommitment(String horacommitment) {
+        this.horacommitment = horacommitment;
     }
     public String getDate() {
         return date;
